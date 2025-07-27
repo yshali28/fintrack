@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# FinTrack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+FinTrack is a personal finance management web application that helps users track expenses, set budgets, monitor savings, and gain insights into their financial habits. Built with React for the frontend and Node.js/Express with MongoDB for the backend, FinTrack provides a simple and intuitive interface for managing your money.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **User Authentication:** Sign up and sign in securely.
+- **Dashboard:** Visual overview of your expenses and a calendar for financial events.
+- **Budget Management:** Set a monthly budget, add and remove expenses by category.
+- **Expense Tracking:** Track weekly expenses across multiple categories with visual pie charts.
+- **Savings Goals:** Set and monitor savings goals for different categories.
+- **Settings:** Update your profile and change your password.
+- **Responsive UI:** Clean, modern, and mobile-friendly design.
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+fintrack/
+├── backend/
+│   ├── .env
+│   ├── index.js
+│   ├── package.json
+│   ├── models/
+│   │   └── User.js
+│   └── routes/
+│       └── users.js
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── App.js
+│   ├── index.js
+│   ├── index.css
+│   ├── components/
+│   │   ├── Calendar.jsx
+│   │   ├── ExpensePieChart.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Navbar.jsx
+│   │   └── Sidebar.jsx
+│   └── pages/
+│       ├── Budget.jsx
+│       ├── Dashboard.jsx
+│       ├── Expenses.jsx
+│       ├── Home.jsx
+│       ├── Savings.jsx
+│       ├── Settings.jsx
+│       ├── SignIn.jsx
+│       └── SignUp.jsx
+├── package.json
+└── README.md
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v16+ recommended)
+- npm
+- MongoDB Atlas account (or local MongoDB instance)
 
-### `npm run build`
+### Backend Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navigate to the `backend` folder:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```sh
+   cd backend
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
 
-### `npm run eject`
+   ```sh
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Create a `.env` file in the `backend` folder and add your MongoDB connection string:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```
+   MONGO_URI=your_mongodb_connection_string
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Start the backend server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```sh
+   node index.js
+   ```
 
-## Learn More
+   The backend will run on `http://localhost:5000` by default.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Frontend Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. In the project root, install frontend dependencies:
 
-### Code Splitting
+   ```sh
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Start the React development server:
 
-### Analyzing the Bundle Size
+   ```sh
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   The app will run on `http://localhost:3000`.
 
-### Making a Progressive Web App
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Sign Up:** Create a new account.
+- **Sign In:** Log in to access your dashboard.
+- **Dashboard:** View your expense breakdown and use the calendar for notes.
+- **Budget:** Set your monthly budget and add/remove expenses.
+- **Expenses:** Track weekly expenses by category and visualize them.
+- **Savings:** Set savings goals and track your progress.
+- **Settings:** Update your profile and change your password.
 
-### Advanced Configuration
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To build the app for production:
 
-### Deployment
+```sh
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This will create a `build` folder with optimized static files.
 
-### `npm run build` fails to minify
+For backend deployment, ensure your environment variables are set and use a process manager like `pm2` or deploy to a cloud service.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technologies Used
+
+- **Frontend:** React, Chart.js, Recharts, React Router, date-fns
+- **Backend:** Node.js, Express, MongoDB, Mongoose, bcrypt, dotenv, cors
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+**FinTrack** – Your one-stop solution for all your financial tracking
